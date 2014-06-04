@@ -13,10 +13,23 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 
         <!-- Javascript -->
-        <script src="js/home.js"></script>
+        <script src="js/app.js"></script>
         <script src="js/services.js"></script>
 
         <!-- Font -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
     </head>
+
+    <body ng-controller="mainController">
+        <h1>hackNY Class of 2014 Fellows</h1>
+        <div class="card" ng-repeat="fellow in fellows">
+            <div class="info-wrapper">
+                <p>Name: {{ fellow.name }}</p>
+                <p>School: {{ fellow.school }}</p>
+                <p>Company: {{ fellow.company }}</p>
+            </div>
+            <img src="/imgs/{{ fellow.pic }}">
+        </div>
+    </body>
 
 </html>
